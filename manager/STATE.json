@@ -1,0 +1,9 @@
+{
+  "agent": "MANAGER",
+  "current_round": 0,
+  "phase": "idle",
+  "done": false,
+  "run_state": "RUNNING",
+  "updated_at": "2026-03-14T00:00:00Z",
+  "notes": "Edit run_state to PAUSED/STOPPED to halt new rounds."
+}

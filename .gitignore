@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual envs
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs / runs / artifacts
+*.log
+runs/
+outputs/
+wandb/
+
+# Large ML artifacts
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# Data / caches
+**/data/
+**/datasets/
+**/.cache/
+
+# External repos cloned into playground pilots
+playground/**/external/
+
+# Autoresearch-specific: results tables should stay local unless curated
+**/results.tsv
