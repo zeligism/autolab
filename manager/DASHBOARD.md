@@ -3,72 +3,63 @@
 ## Current round
 
 - Round: R0000
-- Status: open
+- Status: closed
 - Opened at: 2026-03-15T16:38:53Z
+- Closed at: 2026-03-15T22:01:57Z
 - Focus themes:
   - Optimization + numerics for faster, stable convergence
   - Systems + data levers for single-GPU efficiency
 
 ## Agent statuses
 
-- LIT: active for R0000 directives (see `lit_review/STATE.json`)
-- PLAY: active for R0000 directives (see `playground/STATE.json`)
-- BUILD: active for R0000 directives (see `projects/STATE.json`)
+- LIT: R0000 complete (`phase=done`, `done=true`)
+- PLAY: R0000 complete (`phase=done`, `done=true`)
+- BUILD: R0000 complete (`phase=done`, `done=true`)
 
-## This round goals
+## R0000 goals
 
 - Build a high-signal map of efficient-training subproblems with citations.
 - Produce cheap falsifiable hypotheses for rapid kill-or-promote decisions.
 - Run fast pilot checks (minutes-scale) to validate tooling and idea quality.
 - Prepare a reproducible projects intake scaffold for single-GPU, few-hour studies.
 
-## Expected deliverables
+## R0000 review outcomes
 
-### LIT
+- LIT deliverables accepted:
+  - Added two new topic maps with citations and falsifiable seeds.
+  - Updated `lit_review/INDEX.md`.
+  - Completed required review interaction (LIT -> PLAY).
+- PLAY deliverables accepted (using corrected summary `MSG-20260315T190243Z-fe24`):
+  - Added pilot report + two idea notes + toy test evidence.
+  - Completed required review interaction (PLAY -> LIT).
+- BUILD deliverables accepted:
+  - Added reusable intake scaffold + evaluation contract + baseline plan.
+  - Completed required review interaction (BUILD -> MANAGER).
+- Round review-loop requirement met for all non-manager agents.
 
-- 2 topic-map docs in `lit_review/topics/` aligned to the two focus themes.
-- 5-15 primary references per topic, 3-10 open problems per topic.
-- At least 10 total playground seeds with hypothesis, toy test, metric, kill criterion.
-- Updated `lit_review/INDEX.md` with links to new artifacts.
-- One `REVIEW` message to PLAY, plus one summary message to MANAGER including:
-  - top 3 seeds
-  - one workflow improvement proposal
-  - one new research hypothesis worth testing
+## Decisions (R0000 close)
 
-### PLAY
-
-- Short validation run + report for `playground/pilots/AR-20260314-autoresearch-pilot/`.
-- At least 2 idea notes in `playground/ideas/` with explicit baselines and kill criteria.
-- At least 1 minutes-scale toy test result with concise evidence.
-- One `REVIEW` message to LIT, plus one summary message to MANAGER including:
-  - top 1-3 promotion candidates
-  - clear kill recommendations
-  - one workflow improvement proposal
-  - one new research hypothesis worth testing
-
-### BUILD
-
-- One reusable intake scaffold for efficient-training project candidates in `projects/`.
-- Evaluation contract for single-GPU experiments (time, memory, quality, compute budget).
-- One baseline experiment plan with explicit reproducibility notes and blockers.
-- One `REVIEW` message to MANAGER, plus one summary message including:
-  - readiness status
-  - key blockers
-  - one workflow improvement proposal
-  - one new research hypothesis worth testing
-
-## Review plan
-
-- LIT sends a `REVIEW` request to PLAY on top seeds.
-- PLAY sends a `REVIEW` request to LIT on at least one idea note.
-- BUILD sends a `REVIEW` request to MANAGER on the intake scaffold.
-- MANAGER provides review feedback during round close with accept/reject/carry decisions.
-
-## Decisions
-
-- (manager fills when closing round)
+1. Promote exactly one idea to a serious next step:
+   - `playground/ideas/I-20260315-on2-8bit-states-clip-schedule.md` is promoted to BUILD for R0001.
+2. Kill:
+   - Naive `SD-4` lightweight dedup variant is killed for promotion this cycle (negative toy evidence).
+3. Carry (non-promoted):
+   - Coverage-constrained dedup remains a PLAY exploratory thread.
+4. BUILD scaffold decision:
+   - Accept `projects/intake_scaffold/` as default promotion intake structure for R0001 execution.
+5. Workflow-improvement decisions:
+   - LIT seed scorecard proposal: accept for R0001 trial.
+   - PLAY preflight script + runnable-lane classification proposal: accept for R0001 trial.
+   - BUILD run metadata JSON schema proposal: accept for R0001 trial.
 
 ## Promotion queue
 
-- Candidate ideas:
-  - (none yet)
+- Promoted:
+  - `I-20260315-on2-8bit-states-clip-schedule` -> BUILD serious step in R0001.
+- Not promoted this round:
+  - `I-20260315-sd4-lightweight-dedup` (carry as exploratory only).
+
+## Next-round planning
+
+- R0001 task messages have been created in agent inboxes.
+- Manager state remains `closed` for R0000 after closeout.

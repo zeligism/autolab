@@ -1,9 +1,9 @@
 {
   "agent": "MANAGER",
   "current_round": 0,
-  "phase": "open",
-  "done": false,
+  "phase": "closed",
+  "done": true,
   "run_state": "RUNNING",
-  "updated_at": "2026-03-15T16:38:53Z",
-  "notes": "Edit run_state to PAUSED/STOPPED to halt new rounds."
+  "updated_at": "2026-03-15T22:01:57Z",
+  "notes": "R0000 closed. R0001 directives queued; do not open new round when run_state is PAUSED/STOPPED."
 }
