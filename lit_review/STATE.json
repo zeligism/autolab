@@ -1,9 +1,9 @@
 {
   "agent": "LIT",
   "current_round": 0,
-  "phase": "idle",
-  "done": false,
+  "phase": "done",
+  "done": true,
   "run_state": "RUNNING",
-  "updated_at": "2026-03-14T00:00:00Z",
-  "notes": ""
+  "updated_at": "2026-03-15T16:46:19Z",
+  "notes": "Completed R0000 directive: two topic docs, index update, PLAY review request, manager summary sent."
 }
