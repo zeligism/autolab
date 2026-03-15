@@ -185,58 +185,23 @@ Keep the on-disk protocol stable so you can swap the runner later.
 
 ## Making multi-agent runs smooth and automatic
 
-Use this startup sequence for **every Codex agent session** (MANAGER/LIT/PLAY/BUILD):
+Use this setup script in your enviroment:
 
 ```bash
-git remote -v
-git checkout -B run
-test -z "$(git status --porcelain)" || { echo "Working tree is dirty; commit/stash first."; exit 1; }
+git config --global credential.helper store
+printf "https://%s:%s@github.com\n" "$GITHUB_USERNAME" "$GITHUB_TOKEN" > ~/.git-credentials
+chmod 600 ~/.git-credentials
+
+git remote -v || true
+git remote add origin https://github.com/zeligism/autolab.git 2>/dev/null || \
+git remote set-url origin https://github.com/zeligism/autolab.git
+
 git fetch origin
-git reset --hard origin/run
-```
+git checkout run
+git branch --set-upstream-to=origin/run run
 
-If you want a single command, run:
-
-```bash
 bash scripts/preflight.sh
 ```
-
-After each agent completes work, publish immediately:
-
-```bash
-git add -A
-git commit -m "<agent>: <summary>"
-git fetch origin run
-git rebase origin/run
-git push origin run
-```
-
-If `git rebase origin/run` reports conflicts, resolve conflicts first and continue with `git rebase --continue` before pushing.
-
-This guarantees all other agents can pick up the latest state by re-running:
-
-```bash
-git fetch origin && git reset --hard origin/run
-```
-
-## Manual verification checklist
-
-In any Codex session, run:
-
-```bash
-bash scripts/preflight.sh
-git branch --show-current
-git remote -v
-git log --oneline -n 5
-git ls-remote --heads origin
-for v in GITHUB_USERNAME GITHUB_TOKEN; do [ -n "${!v:-}" ] && echo "$v=set" || echo "$v=missing"; done
-```
-
-Expected:
-- branch is `run`
-- `origin` points to your `autolab` remote (HTTPS or SSH URL is both fine)
-- latest commit appears in both local log and `ls-remote`
-- required env vars report `set`
 
 ## Secret safety (important)
 

@@ -25,12 +25,29 @@ This document defines the **global invariants** for the agentic research org.
    - For non-trivial factual claims (papers, numbers, APIs), include a source (URL, arXiv, DOI).
    - Mark speculation as speculation.
 
-## Git invariants (run branch workflow)
+## Git invariants and workflow
 
 - Shared branch for agent sessions is `run`.
 - Sync from `origin/run` before starting agent work and before pushing.
 - Do **not** force-push `run`.
 - Before running destructive sync commands (for example `git reset --hard`), ensure local changes are committed/stashed or intentionally discarded.
+
+Use the existing branch `run` for all work. Do NOT use work branch.
+
+Required git workflow:
+- `git checkout run`
+- `git pull --rebase origin run`
+
+After you finish the task:
+- `git add -A`
+- `git commit -m "<agent>: <summary>"`
+- `git push origin run`
+
+Constraints:
+- Push directly to `run`
+- Do not create any other branch
+- Do not leave changes uncommitted
+- If there is a push conflict, rebase onto `origin/run` and push again
 
 ## Authority
 
