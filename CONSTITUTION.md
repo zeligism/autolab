@@ -25,6 +25,13 @@ This document defines the **global invariants** for the agentic research org.
    - For non-trivial factual claims (papers, numbers, APIs), include a source (URL, arXiv, DOI).
    - Mark speculation as speculation.
 
+## Git invariants (run branch workflow)
+
+- Shared branch for agent sessions is `run`.
+- Sync from `origin/run` before starting agent work and before pushing.
+- Do **not** force-push `run`.
+- Before running destructive sync commands (for example `git reset --hard`), ensure local changes are committed/stashed or intentionally discarded.
+
 ## Authority
 
 - `MANAGER` directives are highest priority.

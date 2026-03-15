@@ -182,3 +182,83 @@ That maps naturally to:
 - Agents SDK / handoffs (messages = events)
 
 Keep the on-disk protocol stable so you can swap the runner later.
+
+## Making multi-agent runs smooth and automatic
+
+Use this startup sequence for **every Codex agent session** (MANAGER/LIT/PLAY/BUILD):
+
+```bash
+git remote -v
+git checkout -B run
+test -z "$(git status --porcelain)" || { echo "Working tree is dirty; commit/stash first."; exit 1; }
+git fetch origin
+git reset --hard origin/run
+```
+
+If you want a single command, run:
+
+```bash
+bash scripts/preflight.sh
+```
+
+After each agent completes work, publish immediately:
+
+```bash
+git add -A
+git commit -m "<agent>: <summary>"
+git fetch origin run
+git rebase origin/run
+git push origin run
+```
+
+If `git rebase origin/run` reports conflicts, resolve conflicts first and continue with `git rebase --continue` before pushing.
+
+This guarantees all other agents can pick up the latest state by re-running:
+
+```bash
+git fetch origin && git reset --hard origin/run
+```
+
+## Manual verification checklist
+
+In any Codex session, run:
+
+```bash
+bash scripts/preflight.sh
+git branch --show-current
+git remote -v
+git log --oneline -n 5
+git ls-remote --heads origin
+for v in GITHUB_USERNAME GITHUB_TOKEN; do [ -n "${!v:-}" ] && echo "$v=set" || echo "$v=missing"; done
+```
+
+Expected:
+- branch is `run`
+- `origin` points to your `autolab` remote (HTTPS or SSH URL is both fine)
+- latest commit appears in both local log and `ls-remote`
+- required env vars report `set`
+
+## Secret safety (important)
+
+When setting GitHub secrets/env vars in Codex:
+
+- Use **secret variables**, never plain-text prompt content.
+- Never print token values in terminal output or logs.
+- Never commit `.env`, tokens, or credential files to git.
+- Prefer short-lived/fine-grained tokens over broad long-lived PATs.
+- Rotate tokens immediately if exposure is suspected.
+
+Recommended token settings (GitHub):
+- Token type: **Fine-grained personal access token** (preferred).
+- Repository access: only `zeligism/autolab`.
+- Minimum permissions:
+  - **Contents: Read and write** (push commits)
+  - **Pull requests: Read and write** (create/update PRs)
+  - Metadata read-only is implicit.
+- Optional (if needed): Issues read/write for issue-linked workflows.
+
+Codex environment settings to allow:
+- Filesystem: write access to repo workspace.
+- Network: enabled (for GitHub push/PR APIs).
+- Non-interactive auth: inject `GITHUB_USERNAME` + `GITHUB_TOKEN` as secrets.
+- Keep approval policy compatible with unattended git operations.
