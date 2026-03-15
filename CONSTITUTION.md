@@ -25,29 +25,35 @@ This document defines the **global invariants** for the agentic research org.
    - For non-trivial factual claims (papers, numbers, APIs), include a source (URL, arXiv, DOI).
    - Mark speculation as speculation.
 
-## Git invariants and workflow
+## Git workflow
 
-- Shared branch for agent sessions is `run`.
-- Sync from `origin/run` before starting agent work and before pushing.
-- Do **not** force-push `run`.
-- Before running destructive sync commands (for example `git reset --hard`), ensure local changes are committed/stashed or intentionally discarded.
+Do all work on the current branch `work`. When you are completely finished, move the final changes onto the existing branch `run` and push `run` to GitHub.
 
-Use the existing branch `run` for all work. Do NOT use work branch.
+Git requirements:
+1. Stay on `work` while editing.
+2. Commit all finished changes on `work`.
+3. Ensure a remote named `github` exists and points to `https://github.com/zeligism/autolab.git`.
+   - If `github` does not exist, add it.
+   - If it exists but points somewhere else, update it.
+4. Fetch from `github`.
+5. Check out the existing branch `run`.
+6. Move the finished work from `work` onto `run` using cherry-pick of the final commit(s). Do not merge `work` into `run`.
+7. Push directly to `github/run`.
 
-Required git workflow:
+Use these commands if needed:
+- `git remote get-url github || git remote add github https://github.com/zeligism/autolab.git`
+- `git remote set-url github https://github.com/zeligism/autolab.git`
+- `git fetch github`
 - `git checkout run`
-- `git pull --rebase origin run`
-
-After you finish the task:
-- `git add -A`
-- `git commit -m "<agent>: <summary>"`
-- `git push origin run`
+- `git cherry-pick <commit-sha>`
+- `git push github run`
 
 Constraints:
-- Push directly to `run`
-- Do not create any other branch
-- Do not leave changes uncommitted
-- If there is a push conflict, rebase onto `origin/run` and push again
+- Do not push the `work` branch.
+- Do not create a pull request.
+- Do not push to `main`.
+- The final published result must be on `github` branch `run`.
+- If `origin` points elsewhere, ignore it and use `github`.
 
 ## Authority
 

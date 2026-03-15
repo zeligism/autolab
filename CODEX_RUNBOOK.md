@@ -185,22 +185,18 @@ Keep the on-disk protocol stable so you can swap the runner later.
 
 ## Making multi-agent runs smooth and automatic
 
-Use this setup script in your enviroment:
+In Codex enviroment's setting,
+set the enviroment variable `GITHUB_USERNAME` with your GitHub username,
+and set the secret `GITHUB_TOKEN` to an access token,
+which you should generate from your developer setting in GitHub.
+Make sure you allow read/write access for Contents and Pull Requests.
+
+After that, choose manual setup and copy-paste this setup script (not maintenance script):
 
 ```bash
 git config --global credential.helper store
 printf "https://%s:%s@github.com\n" "$GITHUB_USERNAME" "$GITHUB_TOKEN" > ~/.git-credentials
 chmod 600 ~/.git-credentials
-
-git remote -v || true
-git remote add origin https://github.com/zeligism/autolab.git 2>/dev/null || \
-git remote set-url origin https://github.com/zeligism/autolab.git
-
-git fetch origin
-git checkout run
-git branch --set-upstream-to=origin/run run
-
-bash scripts/preflight.sh
 ```
 
 ## Secret safety (important)
