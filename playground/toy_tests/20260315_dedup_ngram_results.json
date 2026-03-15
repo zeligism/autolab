@@ -1,0 +1,501 @@
+{
+  "seed": 20260315,
+  "order": 3,
+  "alpha": 0.5,
+  "train_raw_lines": 2400,
+  "val_lines": 180,
+  "target_bpc": 1.59189,
+  "runtime_sec": 1.119,
+  "results": [
+    {
+      "regime": "none",
+      "train_lines": 2400,
+      "train_chars": 237096,
+      "final_val_bpc": 1.57189,
+      "target_bpc": 1.59189,
+      "chars_to_target": 165934,
+      "checkpoints": [
+        {
+          "seen_lines": 80,
+          "seen_chars": 7999,
+          "val_bpc": 2.38908
+        },
+        {
+          "seen_lines": 160,
+          "seen_chars": 15834,
+          "val_bpc": 2.07143
+        },
+        {
+          "seen_lines": 240,
+          "seen_chars": 23706,
+          "val_bpc": 1.9369
+        },
+        {
+          "seen_lines": 320,
+          "seen_chars": 31686,
+          "val_bpc": 1.84275
+        },
+        {
+          "seen_lines": 400,
+          "seen_chars": 39768,
+          "val_bpc": 1.79127
+        },
+        {
+          "seen_lines": 480,
+          "seen_chars": 47542,
+          "val_bpc": 1.74957
+        },
+        {
+          "seen_lines": 560,
+          "seen_chars": 55398,
+          "val_bpc": 1.71809
+        },
+        {
+          "seen_lines": 640,
+          "seen_chars": 63326,
+          "val_bpc": 1.69491
+        },
+        {
+          "seen_lines": 720,
+          "seen_chars": 71177,
+          "val_bpc": 1.67704
+        },
+        {
+          "seen_lines": 800,
+          "seen_chars": 79081,
+          "val_bpc": 1.66436
+        },
+        {
+          "seen_lines": 880,
+          "seen_chars": 87006,
+          "val_bpc": 1.65249
+        },
+        {
+          "seen_lines": 960,
+          "seen_chars": 94940,
+          "val_bpc": 1.64204
+        },
+        {
+          "seen_lines": 1040,
+          "seen_chars": 102827,
+          "val_bpc": 1.63353
+        },
+        {
+          "seen_lines": 1120,
+          "seen_chars": 110695,
+          "val_bpc": 1.62469
+        },
+        {
+          "seen_lines": 1200,
+          "seen_chars": 118515,
+          "val_bpc": 1.61721
+        },
+        {
+          "seen_lines": 1280,
+          "seen_chars": 126381,
+          "val_bpc": 1.61136
+        },
+        {
+          "seen_lines": 1360,
+          "seen_chars": 134282,
+          "val_bpc": 1.60656
+        },
+        {
+          "seen_lines": 1440,
+          "seen_chars": 142155,
+          "val_bpc": 1.60213
+        },
+        {
+          "seen_lines": 1520,
+          "seen_chars": 150133,
+          "val_bpc": 1.59726
+        },
+        {
+          "seen_lines": 1600,
+          "seen_chars": 157999,
+          "val_bpc": 1.594
+        },
+        {
+          "seen_lines": 1680,
+          "seen_chars": 165934,
+          "val_bpc": 1.59079
+        },
+        {
+          "seen_lines": 1760,
+          "seen_chars": 173738,
+          "val_bpc": 1.5871
+        },
+        {
+          "seen_lines": 1840,
+          "seen_chars": 181567,
+          "val_bpc": 1.58435
+        },
+        {
+          "seen_lines": 1920,
+          "seen_chars": 189571,
+          "val_bpc": 1.5822
+        },
+        {
+          "seen_lines": 2000,
+          "seen_chars": 197504,
+          "val_bpc": 1.5802
+        },
+        {
+          "seen_lines": 2080,
+          "seen_chars": 205423,
+          "val_bpc": 1.57795
+        },
+        {
+          "seen_lines": 2160,
+          "seen_chars": 213335,
+          "val_bpc": 1.57606
+        },
+        {
+          "seen_lines": 2240,
+          "seen_chars": 221284,
+          "val_bpc": 1.57496
+        },
+        {
+          "seen_lines": 2320,
+          "seen_chars": 229121,
+          "val_bpc": 1.57315
+        },
+        {
+          "seen_lines": 2400,
+          "seen_chars": 237096,
+          "val_bpc": 1.57189
+        }
+      ]
+    },
+    {
+      "regime": "moderate",
+      "train_lines": 788,
+      "train_chars": 76660,
+      "final_val_bpc": 1.60719,
+      "target_bpc": 1.59189,
+      "chars_to_target": null,
+      "checkpoints": [
+        {
+          "seen_lines": 26,
+          "seen_chars": 2560,
+          "val_bpc": 3.24002
+        },
+        {
+          "seen_lines": 52,
+          "seen_chars": 5194,
+          "val_bpc": 2.67005
+        },
+        {
+          "seen_lines": 78,
+          "seen_chars": 7785,
+          "val_bpc": 2.3765
+        },
+        {
+          "seen_lines": 104,
+          "seen_chars": 10292,
+          "val_bpc": 2.23609
+        },
+        {
+          "seen_lines": 130,
+          "seen_chars": 12838,
+          "val_bpc": 2.12494
+        },
+        {
+          "seen_lines": 156,
+          "seen_chars": 15398,
+          "val_bpc": 2.05158
+        },
+        {
+          "seen_lines": 182,
+          "seen_chars": 17888,
+          "val_bpc": 1.99222
+        },
+        {
+          "seen_lines": 208,
+          "seen_chars": 20436,
+          "val_bpc": 1.93708
+        },
+        {
+          "seen_lines": 234,
+          "seen_chars": 23037,
+          "val_bpc": 1.89194
+        },
+        {
+          "seen_lines": 260,
+          "seen_chars": 25620,
+          "val_bpc": 1.8528
+        },
+        {
+          "seen_lines": 286,
+          "seen_chars": 28136,
+          "val_bpc": 1.82455
+        },
+        {
+          "seen_lines": 312,
+          "seen_chars": 30593,
+          "val_bpc": 1.79949
+        },
+        {
+          "seen_lines": 338,
+          "seen_chars": 33148,
+          "val_bpc": 1.777
+        },
+        {
+          "seen_lines": 364,
+          "seen_chars": 35703,
+          "val_bpc": 1.75586
+        },
+        {
+          "seen_lines": 390,
+          "seen_chars": 38230,
+          "val_bpc": 1.73921
+        },
+        {
+          "seen_lines": 416,
+          "seen_chars": 40731,
+          "val_bpc": 1.72643
+        },
+        {
+          "seen_lines": 442,
+          "seen_chars": 43252,
+          "val_bpc": 1.70919
+        },
+        {
+          "seen_lines": 468,
+          "seen_chars": 45799,
+          "val_bpc": 1.69642
+        },
+        {
+          "seen_lines": 494,
+          "seen_chars": 48311,
+          "val_bpc": 1.68511
+        },
+        {
+          "seen_lines": 520,
+          "seen_chars": 50878,
+          "val_bpc": 1.67397
+        },
+        {
+          "seen_lines": 546,
+          "seen_chars": 53349,
+          "val_bpc": 1.66347
+        },
+        {
+          "seen_lines": 572,
+          "seen_chars": 55875,
+          "val_bpc": 1.65503
+        },
+        {
+          "seen_lines": 598,
+          "seen_chars": 58345,
+          "val_bpc": 1.64792
+        },
+        {
+          "seen_lines": 624,
+          "seen_chars": 60859,
+          "val_bpc": 1.64109
+        },
+        {
+          "seen_lines": 650,
+          "seen_chars": 63371,
+          "val_bpc": 1.63481
+        },
+        {
+          "seen_lines": 676,
+          "seen_chars": 65868,
+          "val_bpc": 1.62922
+        },
+        {
+          "seen_lines": 702,
+          "seen_chars": 68336,
+          "val_bpc": 1.62434
+        },
+        {
+          "seen_lines": 728,
+          "seen_chars": 70848,
+          "val_bpc": 1.61905
+        },
+        {
+          "seen_lines": 754,
+          "seen_chars": 73377,
+          "val_bpc": 1.61328
+        },
+        {
+          "seen_lines": 780,
+          "seen_chars": 75891,
+          "val_bpc": 1.60834
+        },
+        {
+          "seen_lines": 788,
+          "seen_chars": 76660,
+          "val_bpc": 1.60719
+        }
+      ]
+    },
+    {
+      "regime": "aggressive",
+      "train_lines": 675,
+      "train_chars": 65528,
+      "final_val_bpc": 1.62247,
+      "target_bpc": 1.59189,
+      "chars_to_target": null,
+      "checkpoints": [
+        {
+          "seen_lines": 22,
+          "seen_chars": 2161,
+          "val_bpc": 3.3499
+        },
+        {
+          "seen_lines": 44,
+          "seen_chars": 4370,
+          "val_bpc": 2.78634
+        },
+        {
+          "seen_lines": 66,
+          "seen_chars": 6597,
+          "val_bpc": 2.49619
+        },
+        {
+          "seen_lines": 88,
+          "seen_chars": 8714,
+          "val_bpc": 2.32781
+        },
+        {
+          "seen_lines": 110,
+          "seen_chars": 10846,
+          "val_bpc": 2.20466
+        },
+        {
+          "seen_lines": 132,
+          "seen_chars": 13017,
+          "val_bpc": 2.12355
+        },
+        {
+          "seen_lines": 154,
+          "seen_chars": 15161,
+          "val_bpc": 2.06274
+        },
+        {
+          "seen_lines": 176,
+          "seen_chars": 17282,
+          "val_bpc": 2.00211
+        },
+        {
+          "seen_lines": 198,
+          "seen_chars": 19444,
+          "val_bpc": 1.95329
+        },
+        {
+          "seen_lines": 220,
+          "seen_chars": 21643,
+          "val_bpc": 1.90646
+        },
+        {
+          "seen_lines": 242,
+          "seen_chars": 23778,
+          "val_bpc": 1.87296
+        },
+        {
+          "seen_lines": 264,
+          "seen_chars": 25878,
+          "val_bpc": 1.84303
+        },
+        {
+          "seen_lines": 286,
+          "seen_chars": 28016,
+          "val_bpc": 1.81781
+        },
+        {
+          "seen_lines": 308,
+          "seen_chars": 30165,
+          "val_bpc": 1.79283
+        },
+        {
+          "seen_lines": 330,
+          "seen_chars": 32300,
+          "val_bpc": 1.77396
+        },
+        {
+          "seen_lines": 352,
+          "seen_chars": 34414,
+          "val_bpc": 1.7585
+        },
+        {
+          "seen_lines": 374,
+          "seen_chars": 36520,
+          "val_bpc": 1.73984
+        },
+        {
+          "seen_lines": 396,
+          "seen_chars": 38674,
+          "val_bpc": 1.72425
+        },
+        {
+          "seen_lines": 418,
+          "seen_chars": 40837,
+          "val_bpc": 1.71222
+        },
+        {
+          "seen_lines": 440,
+          "seen_chars": 42984,
+          "val_bpc": 1.69815
+        },
+        {
+          "seen_lines": 462,
+          "seen_chars": 45074,
+          "val_bpc": 1.68746
+        },
+        {
+          "seen_lines": 484,
+          "seen_chars": 47180,
+          "val_bpc": 1.67807
+        },
+        {
+          "seen_lines": 506,
+          "seen_chars": 49249,
+          "val_bpc": 1.66918
+        },
+        {
+          "seen_lines": 528,
+          "seen_chars": 51401,
+          "val_bpc": 1.66115
+        },
+        {
+          "seen_lines": 550,
+          "seen_chars": 53518,
+          "val_bpc": 1.65552
+        },
+        {
+          "seen_lines": 572,
+          "seen_chars": 55632,
+          "val_bpc": 1.64892
+        },
+        {
+          "seen_lines": 594,
+          "seen_chars": 57704,
+          "val_bpc": 1.64366
+        },
+        {
+          "seen_lines": 616,
+          "seen_chars": 59836,
+          "val_bpc": 1.63787
+        },
+        {
+          "seen_lines": 638,
+          "seen_chars": 61957,
+          "val_bpc": 1.63185
+        },
+        {
+          "seen_lines": 660,
+          "seen_chars": 64055,
+          "val_bpc": 1.62568
+        },
+        {
+          "seen_lines": 675,
+          "seen_chars": 65528,
+          "val_bpc": 1.62247
+        }
+      ]
+    }
+  ]
+}

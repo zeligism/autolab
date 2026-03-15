@@ -1,9 +1,9 @@
 {
   "agent": "BUILD",
   "current_round": 0,
-  "phase": "idle",
-  "done": false,
+  "phase": "done",
+  "done": true,
   "run_state": "RUNNING",
-  "updated_at": "2026-03-14T00:00:00Z",
-  "notes": ""
+  "updated_at": "2026-03-15T21:21:33Z",
+  "notes": "R0000 intake scaffold, evaluation contract, and baseline plan delivered; review + summary sent to manager inbox."
 }

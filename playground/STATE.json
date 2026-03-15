@@ -1,9 +1,9 @@
 {
   "agent": "PLAY",
   "current_round": 0,
-  "phase": "idle",
-  "done": false,
+  "phase": "done",
+  "done": true,
   "run_state": "RUNNING",
-  "updated_at": "2026-03-14T00:00:00Z",
-  "notes": ""
+  "updated_at": "2026-03-15T19:02:49Z",
+  "notes": "R0000 complete: pilot validation, 2 idea notes, dedup toy test, and outbound summaries sent."
 }
